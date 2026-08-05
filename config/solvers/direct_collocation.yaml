@@ -1,0 +1,10 @@
+N: 100
+
+t_max: 30.0
+
+ipopt:
+  max_iter: 5000
+  tol: 1e-4
+  acceptable_tol: 1e-3
+  mu_strategy: adaptive
+  linear_solver: mumps

@@ -1,0 +1,33 @@
+quad_config: config/quad_x500.yaml
+
+experiments:
+
+  - name: position_target
+
+    mode: run
+
+    simulation:
+      dt: 0.01
+      max_duration: 20.0
+
+    initial_state:
+      type: augmented_triple_integrator
+      pos: [ 0, 0, 5 ]
+      vel: [ 0, 0, 0 ]
+      acc: [ 0, 0, 9.81 ]
+
+    target:
+      type: position
+      pos: [ 5, 5, 5 ]
+      tol: 0.5
+
+    planners:
+
+      - model: augmented_triple_integrator
+        planner:
+          type: time_opt_traj_planner
+          config: config/planners/time_optimal_trajectory_planner.yaml
+        solver:
+          type: root_finding
+          config: config/solvers/root_finding.yaml
+        color: red

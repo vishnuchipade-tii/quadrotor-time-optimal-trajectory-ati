@@ -1,0 +1,12 @@
+environment:
+  type: conda
+  name: rpg_env
+
+project:
+  root: ../rpg_time_optimal
+
+python:
+  executable: python
+
+script:
+  entry: main.py

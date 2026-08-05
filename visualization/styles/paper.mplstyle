@@ -1,0 +1,12 @@
+text.usetex : True
+font.family : serif
+
+font.size : 24
+
+axes.labelsize : 24
+axes.titlesize : 26
+
+xtick.labelsize : 20
+ytick.labelsize : 20
+
+legend.fontsize : 20

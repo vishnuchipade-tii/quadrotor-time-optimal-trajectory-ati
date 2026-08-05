@@ -1,0 +1,35 @@
+vehicle_id: "quad_x500"
+
+
+models:
+  simplified:
+    # Triple-integrator model parameters
+    cd: 0.15          # velocity damping coefficient [1/s]
+    ca: 1.7           # acceleration damping coefficient [1/s]
+    use_gravity: true #choose if gravity is to be used or not in the model
+
+    bounds:
+      # Motion constraints
+      j_max: 30.0     # maximum jerk norm [m/s^3]
+      a_max: 7.3      # maximum acceleration norm [m/s^2]
+
+  6dof:
+    mass: 2.0
+    arm_length: 0.25
+
+    inertia: [ [0.08612, 0.0, 0.0],
+               [0.0, 0.08962, 0.0],
+               [0.0, 0.0, 0.16088] ]
+
+    thrust_min: 0.0
+
+    TWR_max: 1.7
+
+    omega_max_xy: 12.0
+    omega_max_z: 3.0
+
+    torque_coeff: 0.016
+
+    rampup_dist: 30.0
+    TWR_ramp_start: 1.2
+    omega_ramp_start: 3.0

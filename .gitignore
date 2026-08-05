@@ -1,0 +1,32 @@
+# Build files
+build/
+devel/
+install/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and generated data
+*.log
+logs/
+results/
+
+#Generated data
+scenario/generated_rpg
+trajectory_tracking/config
+trajectory_tracking/results
+trajectory_tracking/test
+
+
+# Large simulation outputs
+*.bag
+*.mat

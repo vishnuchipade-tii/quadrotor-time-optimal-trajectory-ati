@@ -1,0 +1,112 @@
+quad_config: config/quad_x500.yaml
+
+# ------------------------------------------------------------------
+# Common definitions
+# ------------------------------------------------------------------
+
+simulation: &simulation
+  dt: 0.01
+  max_duration: 20.0
+
+initial_state: &initial_state
+  type: augmented_triple_integrator
+  pos: [0, 0, 2]
+  vel: [0, 0, 0]
+  acc: [0, 0, 9.81]
+
+position_planners: &position_planners
+
+  - model: 6dof
+    planner: rpg_time_opt_traj_planner
+    solver:
+      type: external
+    color: black
+
+  - model: augmented_double_integrator
+    planner: time_opt_traj_planner
+    solver:
+      type: root_finding
+      config: config/solvers/root_finding.yaml
+    color: red
+
+  - model: augmented_triple_integrator
+    planner: time_opt_traj_planner
+    solver:
+      type: root_finding
+      config: config/solvers/root_finding.yaml
+    color: blue
+
+fixed_state_planners: &fixed_state_planners
+
+  - model: 6dof
+    planner: rpg_time_opt_traj_planner
+    solver:
+      type: external
+    color: black
+
+  - model: augmented_double_integrator
+    planner: time_opt_traj_planner
+    solver:
+      type: direct_collocation
+      config: config/solvers/direct_collocation.yaml
+    color: red
+
+  - model: augmented_triple_integrator
+    planner: time_opt_traj_planner
+    solver:
+      type: direct_collocation
+      config: config/solvers/direct_collocation.yaml
+    color: blue
+
+# ------------------------------------------------------------------
+# Experiments
+# ------------------------------------------------------------------
+
+experiments:
+
+  - name: position_target
+
+    mode: compare
+
+    simulation: *simulation
+
+    initial_state: *initial_state
+
+    target:
+      type: position
+      pos: [10, 0, 10]
+      tol: 0.5
+
+    planners: *position_planners
+
+  - name: sphere_target
+
+    mode: compare
+
+    simulation: *simulation
+
+    initial_state: *initial_state
+
+    target:
+      type: sphere
+      center: [10, 0, 10]
+      radius: 3.0
+      tol: 0.5
+
+    planners: *position_planners
+
+  - name: state_target
+
+    mode: compare
+
+    simulation: *simulation
+
+    initial_state: *initial_state
+
+    target:
+      type: state
+      pos: [10, 0, 10]
+      vel: [0, 0, 0]
+      acc: [0, 0, 9.81]
+
+    planners: *fixed_state_planners
