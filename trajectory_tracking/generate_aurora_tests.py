@@ -222,7 +222,7 @@ class TestCaseGenerator:
             json.dumps(TRAJ_TEMPLATE)
         )
 
-        traj["ros_node_args"] = (
+        traj["ros_node_args"].append(
             self.runtime_path(out_csv)
         )
 

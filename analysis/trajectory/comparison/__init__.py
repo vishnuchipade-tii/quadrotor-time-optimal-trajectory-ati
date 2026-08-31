@@ -1,13 +1,18 @@
-from .comparator import TrajectoryComparator
-from .result import (
+from .metrics import (
     SignalMetric,
     AttitudeMetric,
+)
+
+from .result import (
     TrajectoryComparisonResult,
 )
 
+from .comparator import TrajectoryComparator
+
+
 __all__ = [
-    "TrajectoryComparator",
     "SignalMetric",
     "AttitudeMetric",
     "TrajectoryComparisonResult",
+    "TrajectoryComparator",
 ]

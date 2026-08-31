@@ -282,7 +282,7 @@ def main(args):
             filename="table_comp_metrics.tex",
             csv_filename="all_comp_metrics.csv",
 
-            caption="Comparison of the dynamics models and planners with 6DOF model with RPG Planner",
+            caption="Comparison of the dynamics models and trajectory planners with 6DOF model with RPG Planner",
             label="tab:comparison",
 
             second_caption=r"\small{(DI: Double integrator with drag, TI$^*$: Proposed triple integrator with drag)}"

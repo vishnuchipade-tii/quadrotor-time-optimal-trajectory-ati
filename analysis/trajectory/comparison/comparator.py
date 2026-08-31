@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 
 from scipy.interpolate import interp1d
 
+from analysis.trajectory.comparison.metrics import SignalMetric, AttitudeMetric
+from analysis.trajectory.comparison.result import TrajectoryComparisonResult
+
+
 # ============================================================
 # Metric registries
 # ============================================================
