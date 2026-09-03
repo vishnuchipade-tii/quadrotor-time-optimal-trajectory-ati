@@ -1,4 +1,5 @@
-# Time-Optimal Trajectory Generation for Quadrotor
+# Efficient Time-Optimal Trajectory Generation for Quadrotors 
+**<p style="font-size: 20px;"><strong>(Using an Augmented Triple-Integrator)</strong></p>**
 
 A computationally efficient framework for generating **time-optimal trajectories** for quadrotor UAVs using an **augmented triple-integrator model with jerk input**, and systematically comparing its performance against double integrator based trajectory generation methods and a full 6-DOF quadrotor planner (an extdended version of [rpg_time_optimal](https://github.com/uzh-rpg/rpg_time_optimal) planner available at [rpg_time_optimal_extended](https://github.com/vishnuchipade-tii/rpg_time_optimal_extended)).
 
@@ -30,6 +31,8 @@ The framework supports:
 ---
 
 # Repository Structure
+<details>
+<summary><kbd> 📂 <strong>Show Directory Structure</strong></kbd></summary>
 
 ```text
 .
@@ -71,38 +74,67 @@ The framework supports:
 │
 └── README.md
 ```
-
+</details>
 
 ## Module Overview
 
 The repository is organized into four main layers:
 
-### Core Layer
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 1. Core Layer
+
 Contains the fundamental abstractions used throughout the project:
-- vehicle dynamics models
-- state representations
-- targets
-- experiments and simulation data structures
 
-### Planning and Tracking Layer
+- Vehicle dynamics models
+- State representations
+- Targets
+- Experiments and simulation data structures
+
+</td>
+<td width="50%" valign="top">
+
+### 2. Planning and Tracking Layer
+
 Responsible for generating and following trajectories:
-- planners generate desired trajectories
-- solvers optimize trajectories
-- trajectory tracking support via [Aurora](https://github.com/tiiuae/Aurora) to follow generated trajectories
 
-### Analysis Layer
+- Planners generate desired trajectories
+- Solvers optimize trajectories
+- Trajectory tracking support via [Aurora](https://github.com/tiiuae/Aurora) to follow generated trajectories
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 3. Analysis Layer
+
 Processes experiment outputs:
-- trajectory extraction
-- tracking error computation
-- performance metrics
+
+- Trajectory extraction
+- Tracking error computation
+- Performance metrics
 - LaTeX/PDF report generation
 
-### Visualization Layer
+</td>
+<td width="50%" valign="top">
+
+### 4. Visualization Layer
+
 Provides visualization tools for:
-- trajectory comparisons
-- state evolution plots
+
+- Trajectory comparisons
+- State evolution plots
 - 2D/3D trajectory visualization
-- experiment result inspection
+- Experiment result inspection
+
+</td>
+</tr>
+</table>
+
 
 ---
 
@@ -410,7 +442,7 @@ If you use this software in your research, please cite:
 ```bibtex
 @inproceedings{chipade2026,
   author    = {Vishnu S. Chipade and Filippo Bertoncelli},
-  title     = {Efficient Time-optimal Trajectory Generation for Quadrotors Using Augmented Triple-Integrator Model},
+  title     = {Efficient Time-optimal Trajectory Generation for Quadrotors Using an Augmented Triple-Integrator},
   booktitle = {Proceedings of the 26th International Conference on Control, Automation and Systems (ICCAS)},
   year      = {2026},
   pages     = {-},
